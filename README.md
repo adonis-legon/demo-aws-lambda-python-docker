@@ -24,13 +24,27 @@ $ pip freeze > requirements.txt
 ## Docker Build Locally
 
 ```console
-scripts$ . build.sh <version>
+scripts$ . docker-build.sh <version>
+scripts$ # example
+scripts$ . docker-build.sh 1.0.0
+```
+
+## Docker Build Locally and Push to AWS ECR
+
+**Important:** before running the push to AWS ECR feature, there must be a local/custom .[env]-docker-env.sh to have the correct AWS Account and User information
+
+```console
+scripts$ . docker-build.sh <version> <push-image>
+scripts$ # example
+scripts$ . docker-build.sh 1.0.0 true
 ```
 
 ## Docker Start Locally
 
 ```console
-scripts$ . start.sh <version>
+scripts$ . docker-start.sh <version>
+scripts$ # example
+scripts$ . docker-start.sh 1.0.0
 ```
 
 ## Docker Function Invoke Locally (using Runtime Interfase Emulator or RIE)
@@ -42,4 +56,22 @@ src/test$ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invoc
 
 ```console
 src/test$ pytest
+```
+
+## Enable Terraform
+
+```console
+terraform$ terraform init
+```
+
+## Review Infrastructure changes
+
+```console
+scripts$ . terraform-plan.sh <env>
+```
+
+## Apply Infrastructure changes
+
+```console
+scripts$ . terraform-apply.sh <env>
 ```

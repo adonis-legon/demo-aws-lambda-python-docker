@@ -2,3 +2,7 @@
 .pytest_cache
 __pycache__
 .vscode
+*.auto.tfvars
+!env-template.auto.tfvars
+docker-env-*.sh
+!docker-env-template.sh
