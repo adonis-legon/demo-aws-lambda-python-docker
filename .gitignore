@@ -6,3 +6,6 @@ __pycache__
 !env-template.auto.tfvars
 docker-env-*.sh
 !docker-env-template.sh
+terraform/.terraform/providers
+terraform/terraform.tfstate.d
+.terraform.lock.hcl
