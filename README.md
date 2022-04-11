@@ -58,7 +58,7 @@ src/test$ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invoc
 src/test$ pytest
 ```
 
-## Enable Terraform
+## Setup Terraform
 
 ```console
 terraform$ terraform init
