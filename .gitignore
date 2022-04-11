@@ -7,4 +7,3 @@ __pycache__
 docker-env-*.sh
 !docker-env-template.sh
 terraform/.terraform/providers
-.terraform.lock.hcl
