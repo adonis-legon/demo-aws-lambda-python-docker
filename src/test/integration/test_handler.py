@@ -12,4 +12,4 @@ def apigw_event():
 
 def test_handler_when_proxy_event_for_sum(apigw_event):
     result = handler(apigw_event, None)
-    assert result["body"]["result"] == 3
+    assert json.loads(result["body"])["result"] == 3

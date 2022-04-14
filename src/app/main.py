@@ -14,7 +14,9 @@ def handler(event, context):
     print(f'Result is: {result}')
     return {
         "statusCode": 200,
-        "body": {
-            "result": result
-        }
+        "isBase64Encoded": False,
+        "body": json.dumps({
+            "result": result,
+            "message": "OK"
+        })
     }

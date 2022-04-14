@@ -1,3 +1,8 @@
+environment_tag = "environment_tag"
 aws_access_key = "aws_access_key"
 aws_secret_key = "aws_access_key"
 aws_region = "aws_access_key"
+aws_account = "aws_account"
+lambda_name = "lambda_name"
+lambda_version = "lambda_version"
+lamdda_api_version = "lamdda_api_version"

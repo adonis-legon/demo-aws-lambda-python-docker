@@ -31,12 +31,12 @@ scripts$ . docker-build.sh 1.0.0
 
 ## Docker Build Locally and Push to AWS ECR
 
-**Important:** before running the push to AWS ECR feature, there must be a local/custom .[env]-docker-env.sh to have the correct AWS Account and User information
+**Important:** before running the push to AWS ECR feature, there must be a local/custom docker-env-[env].sh to have the correct AWS Account and User information
 
 ```console
-scripts$ . docker-build.sh <version> <push-image>
+scripts$ . docker-build.sh <version> <push-image> <aws-environment>
 scripts$ # example
-scripts$ . docker-build.sh 1.0.0 true
+scripts$ . docker-build.sh 1.0.0 true dev
 ```
 
 ## Docker Start Locally
@@ -74,4 +74,10 @@ scripts$ . terraform-plan.sh <env>
 
 ```console
 scripts$ . terraform-apply.sh <env>
+```
+
+## E2E Test with Deployed Environment
+
+```console
+$ curl --request POST '<lambda_function_api_url>/sum' --header 'Content-Type: application/json' --data-raw '{"a": 1, "b": 2}'
 ```

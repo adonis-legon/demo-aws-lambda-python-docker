@@ -1,6 +1,7 @@
 APP_NAME=demo-aws-lambda-python-docker
 IMAGE_VERSION=${1:-1.0.0}
 PUSH_IMAGE=${2:-false}
+AWS_ENVIRONMENT=${3}
 
 set -e
 
@@ -17,6 +18,10 @@ docker build -t $APP_NAME:$IMAGE_VERSION .
 
 # push image to AWS ECR if selected
 if [ "$PUSH_IMAGE" = true ]; then
+
+    cd scripts
+    . docker-env-$AWS_ENVIRONMENT.sh
+    cd ..
 
     aws ecr get-login-password --region $AWS_REGION --profile $AWS_PROFILE | docker login --username AWS --password-stdin $AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com
 
