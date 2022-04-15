@@ -61,6 +61,7 @@ src/test$ pytest
 ## Setup Terraform
 
 ```console
+terraform$ terraform workspace new <env>
 terraform$ terraform init
 ```
 
